@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://Alberto1Artoni.github.io/al-folio/sitemap.xml
+Sitemap: https://Alberto1Artoni.github.io/sitemap.xml
