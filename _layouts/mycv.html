@@ -1,0 +1,131 @@
+---
+layout: default
+---
+<!-- _layouts/cv.html -->
+{% unless site.data.resume %}
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }} {% if page.cv_pdf %}<a href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url}}" target="_blank" rel="noopener noreferrer" class="float-right"><i class="fas fa-file-pdf"></i></a>{% endif %}</h1>
+      {% if page.description %}<p class="post-description">{{ page.description }}</p>{% endif %}
+  </header>
+
+  <article>
+    <div class="cv">
+      {% for entry in site.data.cv %}
+        <a class="anchor" id="{{ entry.title }}"></a>
+        <div class="card mt-3 p-3">
+          <h3 class="card-title font-weight-medium">{{ entry.title }}</h3>
+          <div>
+          {% if entry.type == "list" %}
+            {% include cv/list.html %}
+          {% elsif entry.type == "map" %}
+            {% include cv/map.html %}
+          {% elsif entry.type == "nested_list" %}
+            {% include cv/nested_list.html %}
+          {% elsif entry.type == "time_table" %}
+            {% include cv/time_table.html %}
+          {% elsif entry.type == "list_groups" %}
+            {% include cv/list_groups.html %}
+          {% else %}
+            {{ entry.contents }}
+          {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+  </article>
+
+</div>
+{% else %}
+<div class="post">
+
+<style>
+    /* Styling for the horizontal rule */
+    hr {
+        border: 1px solid #ccc; /* Border color */
+        margin: 20px 0; /* Margin above and below the horizontal rule */
+    }
+    hr.blue-rule {
+        border: 1px solid blue; /* Set the border color to blue */
+        margin: 20px 0; /* Adjust the margin as needed */
+    }
+</style>
+
+  <header class="post-header">
+      <h4 class="post-title"> Find a complete version of the CV {% if page.cv_pdf %}<a href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url}}" target="_blank" rel="noopener noreferrer">here</a>{% endif %}</h4>
+  </header>
+
+  <style>
+    .custom-table {
+        width: 100%; /* Set the width of the table */
+        border-collapse: collapse; /* Collapse borders to avoid spacing between cells */
+        margin: 10px 0; /* Adjust the margin as needed */
+        border: 0px;
+    }
+    .custom-table td {
+        padding: 8px; /* Add padding to the cells */
+        border-spacing: 0px;
+        border-width: 0px;
+    }
+  </style>
+
+  <hr>
+  <h2> Personal Data </h2>
+  <p> Born in Parma (Pr), Italy, 13/11/1995. </p>
+
+  <hr class="blue-rule">
+  <h2> Education </h2>
+  <table class="custom-table">
+  <tr>
+       <td>2020-2023</td>
+       <td>Ph.D. at Politecnico di Milano</td>
+  </tr>
+  <tr>
+       <td>2014-2020</td>
+       <td>M.Sc. at Politecnico di Milano</td>
+  </tr>
+  </table>
+
+  <hr class="blue-rule">
+
+  <h2> Work Experience </h2>
+  <table class="custom-table">
+  <tr>
+       <td>2023-2024</td>
+       <td>PostDoc at Politecnico di Milano</td>
+  </tr>
+  </table>
+  <table class="custom-table">
+  <tr>
+       <td>2020</td>
+       <td> DWH management at Reply</td>
+  </tr>
+  </table>
+
+  <h2> Teaching Activity </h2>
+  <table class="custom-table">
+  <tr>
+       <td>2023-2024</td>
+       <td> Teaching Assistant, Algorithms and Parallel Computing, <em>Mathematical Engineering</em>, Politecnico di Milano</td>
+  </tr>
+  <tr>
+       <td>2022-2023</td>
+       <td> Teaching Assistant, Curve e Superfici per il Design, <em>Design della Moda</em>, Politecnico di Milano</td>
+  </tr>
+  <tr>
+       <td>2021-2022</td>
+       <td> Teaching Assistant, Metodi Analitici e Numerici per l’Ingegnera, <em>Ingegneria Energetica</em>, Politecnico di Milano</td>
+  </tr>
+  <tr>
+       <td>2021-2022</td>
+       <td> Teaching Assistant, Curve e Superfici per il Design, <em> Design della Moda </em>, Politecnico di Milano</td>
+  </tr>
+  <tr>
+       <td>2020-2021</td>
+       <td> Teaching Assistant, Metodi Analitici e Numerici per l’Ingegnera,<em>Ingegneria Energetica</em>, Politecnico di Milano</td>
+  </tr>
+  </table>
+
+</div>
+{% endunless %}
