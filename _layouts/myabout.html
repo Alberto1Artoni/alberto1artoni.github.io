@@ -51,34 +51,21 @@ layout: default
     <h4> Post Doc at <a href='https://mox.polimi.it/'>MOX Laboratory</a> <h4>
     <hr class="blue-rule", style="margin-left: 34%;">
 
-    <h5 style="white-space: pre-line", class="right-align"> Dipartimento di Matematica 
-         Politecnico di Milano
-         Piazza Leonardo da Vinci, 32
-         20133 Milano - IT<h5>
+    <h5 class="right-align", style="margin-top:-5px"> Dipartimento di Matematica </h5>
+    <h5 class="right-align", style="margin-top:-5px"> Politecnico di Milano </h5>
+    <h5 class="right-align", style="margin-top:-5px"> Piazza Leonardo da Vinci, 32 </h5>
+    <h5 class="right-align", style="margin-top:-5px"> 20133 Milano - IT </h5>
 
           <div class="clearfix">
             {{ content }}
           </div>
 
-          <!-- Selected papers -->
-          {% if page.selected_papers -%}
-            <h3><a href="{{ '/publications/' | relative_url }}" style="color: inherit;">Selected Publications</a></h3>
-            {%- include selected_papers.html %}
-          {%- endif %}
-
-          <!-- Social -->
-          {%- if page.social %}
-            <div class="social">
-              <div class="contact-icons">
-                {% include social.html %}
-              </div>
-
-              <div class="contact-note">
-                {{ site.contact_note }}
-              </div>
-
-            </div>
-          {%- endif %}
+        <h1, style="text-align: center;">
+          <a href="https://github.com/Alberto1Artoni/" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/alberto-artoni-8b6901155/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto: alberto.artoni1995@gmail.com" title="email"><i class="fas fa-envelope"></i></a>
+        </h1>
         </article>
+
 
 </div>
