@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: myabout
 permalink: /
 subtitle: 
 
@@ -14,12 +14,6 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-<h1 style="font-size: 40px" > Alberto Artoni </h1>
-<h4> Post Doc at <a href='https://mox.polimi.it/'>MOX Laboratory</a> <h4>
-<h5 style="white-space: pre-line"> Dipartimento di Matematica 
-     Politecnico di Milano
-     Piazza Leonardo da Vinci, 32
-     20133 Milano - IT<h5>
 
 
 <!--

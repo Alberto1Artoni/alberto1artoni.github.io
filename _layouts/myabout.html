@@ -1,0 +1,84 @@
+---
+layout: default
+---
+<!-- about.html -->
+      <div class="post">
+        <article>
+          {% if page.profile -%}
+          <div class="profile float-{%- if page.profile.align == 'left' -%}left{%- else -%}right{%- endif -%}">
+            {%- if page.profile.image %}
+              {%- assign profile_image_path = page.profile.image | prepend: 'assets/img/' -%}
+
+              {% if page.profile.image_circular %}
+                {%- assign profile_image_class = "img-fluid z-depth-1 rounded-circle" -%}
+              {% else %}
+                {%- assign profile_image_class = "img-fluid z-depth-1 rounded" -%}
+              {% endif %}
+
+              {% include figure.html
+              path=profile_image_path
+              cache_bust=true -%}
+            {% endif -%}
+            {%- if page.profile.more_info %}
+            <div class="more-info">
+              {{ page.profile.more_info }}
+            </div>
+            {%- endif %}
+
+
+          </div>
+          {%- endif %}
+
+<style>
+    /* Styling for the horizontal rule */
+    hr {
+        border: 1px solid #ccc; /* Border color */
+        margin: 20px 0; /* Margin above and below the horizontal rule */
+    }
+    hr.blue-rule {
+        border: 1px solid blue; /* Set the border color to blue */
+        margin: 20px 0; /* Adjust the margin as needed */
+    }
+</style>
+ <style>
+    .right-align {
+      text-align: right;
+    }
+</style>
+
+    <h1 style="font-size: 40px" > Alberto Artoni </h1>
+    <hr class="blue-rule", style="margin-left: 34%;">
+    <h4> Post Doc at <a href='https://mox.polimi.it/'>MOX Laboratory</a> <h4>
+    <hr class="blue-rule", style="margin-left: 34%;">
+
+    <h5 style="white-space: pre-line", class="right-align"> Dipartimento di Matematica 
+         Politecnico di Milano
+         Piazza Leonardo da Vinci, 32
+         20133 Milano - IT<h5>
+
+          <div class="clearfix">
+            {{ content }}
+          </div>
+
+          <!-- Selected papers -->
+          {% if page.selected_papers -%}
+            <h3><a href="{{ '/publications/' | relative_url }}" style="color: inherit;">Selected Publications</a></h3>
+            {%- include selected_papers.html %}
+          {%- endif %}
+
+          <!-- Social -->
+          {%- if page.social %}
+            <div class="social">
+              <div class="contact-icons">
+                {% include social.html %}
+              </div>
+
+              <div class="contact-note">
+                {{ site.contact_note }}
+              </div>
+
+            </div>
+          {%- endif %}
+        </article>
+
+</div>
