@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: sciInterests
 permalink: /scientificinterests/
 title: scientific interests
 nav: true
@@ -7,4 +7,4 @@ nav_order: 2
 
 ---
 
-hello
+ciao
